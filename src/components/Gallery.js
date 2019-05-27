@@ -6,7 +6,7 @@ const Gallery = (props) => {
     return (
         <div>
             <h1>{props.pokemon.name}</h1>
-            <img src={props.pokemon}/>
+            <img src={`https://pokeres.bastionbot.org/images/pokemon/${props.id}.png`} />
         </div>
     )
 

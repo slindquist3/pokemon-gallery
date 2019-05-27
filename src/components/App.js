@@ -7,29 +7,38 @@ class App extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {pokemon: {}, position: 1}
+        this.state = {pokemon: {}, id: 1}
     }
 
     componentDidMount() {
 
-        fetch(`https://pokeapi.co/api/v2/pokemon/${this.state.position}`).then(response => {
+        fetch(`https://pokeapi.co/api/v2/pokemon/${this.state.id}`).then(response => {
             return response.json();
           })
           .then(json => {
             const result = json;
             this.setState({pokemon: result})
-            console.log(this.state.pokemon)
           });
 
-          
+
+    }
+
+    increment = () => {
+
+      this.setState({id: this.state.id + 1})
+
     }
 
     render() {
 
+
         return (
             <div>Pokemon
-                <Gallery pokemon={this.state.pokemon}/>
+                <Gallery pokemon={this.state.pokemon} id={this.state.id}/>
+                  <button onClick={this.increment}>next</button>
+
             </div>
+
         )
 
     }
