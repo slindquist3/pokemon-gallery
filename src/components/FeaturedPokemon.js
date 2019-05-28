@@ -17,7 +17,8 @@ class FeaturedPokemon extends React.Component {
 
             return (
                 <div>
-                    <img src="https://pokeres.bastionbot.org/images/pokemon/1.png"/>
+                    <h1>{this.props.featured.name}</h1>
+                    <img src="https://pokeres.bastionbot.org/images/pokemon/1.png" alt="pokemon"/>
                 </div>
             )
 
